@@ -1,6 +1,6 @@
 [project]
 name = "bin2sbom"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="Fabian Martinez Portantier", email="fportantier@securetia.com" },
 ]

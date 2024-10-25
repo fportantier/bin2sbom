@@ -53,10 +53,7 @@ def generate(directory: Path):
         if not filename.is_file():
             continue
 
-        if "zlib" not in str(filename):
-            continue
-
-        logging.info(filename)
+        logging.debug(filename)
 
         lines = parse_strings(filename)
 
