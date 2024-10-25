@@ -1,9 +1,9 @@
 import json
 import logging
+import sys
 from pathlib import Path
 from uuid import uuid4
 
-import typer
 from cpe import CPE
 from cve_bin_tool.checkers import BUILTIN_CHECKERS
 from cve_bin_tool.strings import parse_strings
@@ -128,10 +128,6 @@ def generate(directory: Path):
     return sbom
 
 
-def cli(directory: Path):
-    sbom = generate(directory=directory)
-    print(json.dumps(sbom, indent=4, default=str))
-
-
 if __name__ == "__main__":
-    typer.run(cli)
+    sbom = generate(directory=sys.argv[1])
+    print(json.dumps(sbom, indent=4, default=str))

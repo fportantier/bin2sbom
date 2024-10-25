@@ -1,6 +1,6 @@
 [project]
 name = "bin2sbom"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Fabian Martinez Portantier", email="fportantier@securetia.com" },
 ]
@@ -15,8 +15,7 @@ classifiers = [
 ]
 dependencies = [
   "cve-bin-tool",
-  "cpe",
-  "typer"
+  "cpe"
 ]
 [project.scripts]
 bin2sbom = "bin2sbom"
