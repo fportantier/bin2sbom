@@ -1,6 +1,6 @@
 [project]
 name = "bin2sbom"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
   { name="Fabian Martinez Portantier", email="fportantier@securetia.com" },
 ]
@@ -14,11 +14,12 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+  "click",
   "cve-bin-tool",
   "cpe"
 ]
 [project.scripts]
-bin2sbom = "bin2sbom"
+bin2sbom = "bin2sbom:cli"
 
 [project.urls]
 Homepage = "https://github.com/fportantier/bin2sbom"

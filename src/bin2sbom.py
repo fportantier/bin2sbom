@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 from uuid import uuid4
 
+import click
 from cpe import CPE
 from cve_bin_tool.checkers import BUILTIN_CHECKERS
 from cve_bin_tool.strings import parse_strings
@@ -128,6 +129,14 @@ def generate(directory: Path):
     return sbom
 
 
-if __name__ == "__main__":
+@click.command()
+@click.argument(
+    "directory", type=click.Path(exists=True, file_okay=False, dir_okay=True)
+)
+def cli():
     sbom = generate(directory=sys.argv[1])
     print(json.dumps(sbom, indent=4, default=str))
+
+
+if __name__ == "__main__":
+    cli()
