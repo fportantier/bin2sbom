@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 from uuid import uuid4
 
+import typer
 from cpe import CPE
 from cve_bin_tool.checkers import BUILTIN_CHECKERS
 from cve_bin_tool.strings import parse_strings
@@ -15,6 +16,7 @@ def generate(directory: Path):
 
     if not directory.is_dir():
         logging.critical(f"Not a directory! {directory}")
+        exit(1)
 
     syft_template = """
     {
@@ -132,4 +134,4 @@ def cli(directory: Path):
 
 
 if __name__ == "__main__":
-    cli()
+    typer.run(cli)
