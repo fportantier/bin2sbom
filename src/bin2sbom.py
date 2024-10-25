@@ -15,6 +15,8 @@ logging.basicConfig(force=True)
 
 def generate(directory: Path):
 
+    directory = Path(directory)
+
     if not directory.is_dir():
         logging.critical(f"Not a directory! {directory}")
         exit(1)
