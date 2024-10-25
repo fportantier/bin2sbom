@@ -133,7 +133,7 @@ def generate(directory: Path):
 @click.argument(
     "directory", type=click.Path(exists=True, file_okay=False, dir_okay=True)
 )
-def cli():
+def cli(directory: Path):
     sbom = generate(directory=sys.argv[1])
     print(json.dumps(sbom, indent=4, default=str))
 
