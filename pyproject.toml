@@ -1,6 +1,6 @@
 [project]
 name = "bin2sbom"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Fabian Martinez Portantier", email="fportantier@securetia.com" },
 ]
@@ -19,7 +19,7 @@ dependencies = [
   "typer"
 ]
 [project.scripts]
-bin2sbom = "bin2sbom:cli"
+bin2sbom = "bin2sbom"
 
 [project.urls]
 Homepage = "https://github.com/fportantier/bin2sbom"
